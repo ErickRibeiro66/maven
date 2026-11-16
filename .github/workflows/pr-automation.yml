@@ -16,6 +16,7 @@
 # under the License.
 
 name: PR Automation
+
 on:
   push:
     branches:
@@ -24,4 +25,10 @@ on:
 jobs:
   pr-automation:
     name: PR Automation
+
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+
     uses: apache/maven-gh-actions-shared/.github/workflows/pr-automation.yml@v5
